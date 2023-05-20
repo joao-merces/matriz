@@ -157,50 +157,61 @@ void imprime_vizinho(Matriz* mat, int linha, int coluna){
         return 0;
     }
 
+
+    // Se for o canto superior esquerdo da matriz
     if(linha == 0 && coluna == 0){
         printf("Vizinho da direita: %d\n", aux->direita->conteudo);
         printf("Vizinho de baixo: %d\n", aux->baixo->conteudo);
     }
 
+    // Se for o canto superior direito da matriz
     else if(linha == 0 && coluna == mat->colunas-1){
         printf("Vizinho de baixo: %d\n", aux->baixo->conteudo);
         printf("Vizinho de esquerda: %d\n", aux->esquerda->conteudo);
     }
 
+    // Se for o canto inferior esquerdo da matriz
     else if(linha == mat->linhas-1 && coluna == 0){
         printf("Vizinho de cima: %d\n", aux->cima->conteudo);
         printf("Vizinho da direita: %d\n", aux->direita->conteudo);
     }
 
+    // Se for o canto inferior direito da matriz
     else if(linha == mat->linhas-1 && coluna == mat->colunas-1){
         printf("Vizinho de cima: %d\n", aux->cima->conteudo);
         printf("Vizinho de esquerda: %d\n", aux->esquerda->conteudo);
     }
 
+
+    // Se for a primeira linha, mas nao for nenhum canto
     else if(linha == 0 && coluna < mat->colunas){
         printf("Vizinho da direita: %d\n", aux->direita->conteudo);
         printf("Vizinho de baixo: %d\n", aux->baixo->conteudo);
         printf("Vizinho de esquerda: %d\n", aux->esquerda->conteudo);
     }
 
+    // Se for a ultima linha, mas nao for nenhum canto
     else if(linha == mat->linhas-1 && coluna < mat->colunas){
         printf("Vizinho de cima: %d\n", aux->cima->conteudo);
         printf("Vizinho da direita: %d\n", aux->direita->conteudo);
         printf("Vizinho de esquerda: %d\n", aux->esquerda->conteudo);
     }
 
+    // Se for a primeira coluna, mas nao for canto
     else if(linha < mat->linhas && coluna == 0){
         printf("Vizinho da direita: %d\n", aux->direita->conteudo);
         printf("Vizinho de baixo: %d\n", aux->baixo->conteudo);
         printf("Vizinho de cima: %d\n", aux->cima->conteudo);
     }
 
+    // Se for a ultima coluna, mas nao for canto
     else if(linha < mat->linhas && coluna == mat->colunas-1){
         printf("Vizinho de cima: %d\n", aux->cima->conteudo);
         printf("Vizinho de baixo: %d\n", aux->baixo->conteudo);
         printf("Vizinho de esquerda: %d\n", aux->esquerda->conteudo);
     }
 
+    // Se for qualquer outro caso (meio da matriz)
     else{
         printf("Vizinho de cima: %d\n", aux->cima->conteudo);
         printf("Vizinho da direita: %d\n", aux->direita->conteudo);
@@ -212,6 +223,13 @@ void imprime_vizinho(Matriz* mat, int linha, int coluna){
 }
 
 void imprime_matriz(Matriz* mat){
+
+    /*
+    aux comeca na posicao 0,0 e enquanto o mesmo nao for nulo
+    imprime a linha i da matriz, quando a linha da matriz chega ao final
+    ele passa para a primeira coluna da linha de baixo e imprime a linha inteira denovo
+    */
+
     no* aux2 = mat->cabeca;
     no* aux = mat->cabeca;
 
@@ -230,6 +248,11 @@ void imprime_matriz(Matriz* mat){
 
 
 int sum_mat(Matriz* mat){
+
+    /*
+    Essa funcao passa por toda a matriz somando o conteudo de cada elemento
+    e ao final imprime a matriz
+    */
 
     no* aux = mat->cabeca;
     no* aux_2 = mat->cabeca;
