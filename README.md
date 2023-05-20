@@ -13,4 +13,4 @@ vizinho a esquerda, direita, cima ou baixo via ponteiros, caso não existem o po
 deve ser nulo. A ideia é utilizarmos essa matriz encadeada como se fosse uma matriz 
 convencional
 
-<img src = "matriz.png">
+<center><img src = "matriz.png"></center>
