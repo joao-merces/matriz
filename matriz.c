@@ -210,3 +210,49 @@ void imprime_vizinho(Matriz* mat, int linha, int coluna){
     }
 
 }
+
+void imprime_matriz(Matriz* mat){
+    no* aux2 = mat->cabeca;
+    no* aux = mat->cabeca;
+
+    while(aux != NULL){
+        if(aux->direita != NULL){
+            printf("[%d]\t", aux->conteudo);
+            aux = aux->direita;
+        }
+        else{
+            printf("[%d]\n", aux->conteudo);
+            aux2 = aux2->baixo;
+            aux = aux2;
+        }
+    }
+}
+
+
+int sum_mat(Matriz* mat){
+
+    no* aux = mat->cabeca;
+    no* aux_2 = mat->cabeca;
+    int sum = 0;
+
+    while(aux != NULL){
+
+        if(aux->direita != NULL){
+
+            sum += aux->conteudo;
+            aux = aux->direita;
+
+        } else {
+
+            sum += aux->conteudo;
+            aux_2 = aux_2->baixo;
+            aux = aux_2;
+
+        }
+    }
+
+    printf("\nTotal: %d\n",sum);
+
+    return 1;
+
+}

@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1684550245 source:d:\merces\desktop\matriz\main.c
+1684620132 source:d:\merces\desktop\matriz\main.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>
 	"matriz.h"
 	<math.h>
 
-1684526781 d:\merces\desktop\matriz\matriz.h
+1684620122 d:\merces\desktop\matriz\matriz.h
 
-1684551701 source:d:\merces\desktop\matriz\matriz.c
+1684619731 source:d:\merces\desktop\matriz\matriz.c
 	<stdio.h>
 	<stdlib.h>
 	"matriz.h"

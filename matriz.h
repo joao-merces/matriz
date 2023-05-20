@@ -25,5 +25,7 @@ int libera_matriz(Matriz* mat);
 int insere_valor(Matriz* mat, int linha, int coluna, int n);
 no* consulta_valor(Matriz* mat, int linha, int coluna);
 no* busca_valor(Matriz* mat, int valor);
+void imprime_matriz(Matriz* mat);
+int sum_mat(Matriz* mat);
 void imprime_vizinho(Matriz* mat, int linha, int coluna);
 #endif // MATRIZ_H_INCLUDED
