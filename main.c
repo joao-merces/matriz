@@ -13,13 +13,14 @@ int main(){
     while(acao){
         printf("Escolha uma opcao:");
         printf("\n1 - Criar matriz");
-        printf("\n2 - Inserir na matriz");
-        printf("\n3 - Consultar valor na matriz");
-        printf("\n4 - Buscar endereco de valor");
-        printf("\n5 - Imprimir vizinhos");
-        printf("\n6 - Imprime matriz");
-        printf("\n7 - Somatorio da matriz");
-        printf("\n8 - Sair\n");
+        printf("\n2 - Preencher matriz");
+        printf("\n3 - Inserir na matriz");
+        printf("\n4 - Consultar valor na matriz");
+        printf("\n5 - Buscar endereco de valor");
+        printf("\n6 - Imprimir vizinhos");
+        printf("\n7 - Imprime matriz");
+        printf("\n8 - Somatorio da matriz");
+        printf("\n9 - Sair\n");
         scanf("%d", &op);
 
         switch(op){
@@ -37,7 +38,7 @@ int main(){
         case 2:
             for( i=0; i<mat->linhas; i++){
                 for( j=0; j<mat->colunas; j++){
-                    insere_valor(mat, i, j, (rand()%100));
+                    insere_valor(mat, i, j, (1+(rand()%100)));
                 }
             }
 
@@ -45,6 +46,18 @@ int main(){
             break;
 
         case 3:
+
+            printf("\nInsira o valor a ser inserido: ");
+            scanf("%d", &valor);
+            printf("\nInsira a linha: ");
+            scanf("%d", &linhas);
+            printf("Insira a coluna: ");
+            scanf("%d", &colunas);
+            printf("\n%d inserido na posicao (%d,%d)\n\n",valor,linhas,colunas);
+            insere_valor(mat,linhas,colunas,valor);
+            break;
+
+        case 4:
 
             printf("\nInsira a linha a ser consultada: ");
             scanf("%d", &linhas);
@@ -56,7 +69,7 @@ int main(){
             printf("\nO valor na posicao [%d][%d] eh: %d\n\n",linhas, colunas, aux->conteudo);
             break;
 
-        case 4:
+        case 5:
 
             printf("\nInsira um valor a ser consultada a posicao: ");
             scanf("%d", &valor);
@@ -65,7 +78,7 @@ int main(){
             printf("\nO endereco de memoria do valor %d eh: %d\n\n", valor, aux_1);
             break;
 
-        case 5:
+        case 6:
 
             printf("\nInsira a linha: ");
             scanf("%d",&linhas);
@@ -78,17 +91,17 @@ int main(){
             printf("\n");
             break;
 
-        case 6:
+        case 7:
             printf("\n");
             imprime_matriz(mat);
             printf("\n");
             break;
 
-        case 7:
+        case 8:
             sum_mat(mat);
             break;
 
-        case 8:
+        case 9:
             acao = false;
             libera_matriz(mat);
 
